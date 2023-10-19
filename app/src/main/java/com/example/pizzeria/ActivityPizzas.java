@@ -1,8 +1,7 @@
 package com.example.pizzeria;
 
-import static com.example.pizzeria.R.id.action_button;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,30 +17,24 @@ public class ActivityPizzas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizzas);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_ios_24);
     }
 
-    // Inflar el menú en la Toolbar
-    @SuppressLint("ResourceType")
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.id.toolbar, menu);
-        return true;
-    }
-
-    // Manejar acciones del botón de la Toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_button) {
-            MenuItem botonVolverToolbar = findViewById(action_button);
-            //botonVolverToolbar.setOnMenuItemClickListener(cambiarActivity());
+        if (id == android.R.id.home) {
+            cambiarActivity();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    public MenuItem.OnMenuItemClickListener cambiarActivity() {
+    public void cambiarActivity() {
 
         startActivity(new Intent(ActivityPizzas.this, MainActivity.class));
         finish();

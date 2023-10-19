@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
@@ -20,7 +20,7 @@
             android:textAlignment="center"
             app:layout_scrollFlags="scroll|enterAlways"
             app:title="Pizzas"
-            app:titleMarginStart="160dp"
+            app:titleMarginStart="90dp"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
             app:titleTextColor="#FFFFFF"></androidx.appcompat.widget.Toolbar>
 
@@ -47,21 +47,211 @@
                 android:layout_height="match_parent"
                 android:text="Tab3" />
         </com.google.android.material.tabs.TabLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/hawaianapizza" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/parmesanacarbonarapizza" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hawaiana Crispy"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Parmesana Carbonara"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/imageButton11"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/cremozzabourbonpizza" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton12"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/cremozzabbqpizza" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cremozza Estilo Bourbon"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cremozza BBQ"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/imageButton13"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/cheesixpizza" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton14"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/extravaganzzapizza" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Cheesix"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Extravaganzza"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/imageButton15"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/veganavarvacoaheurapizza" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton16"
+                        android:layout_width="195dp"
+                        android:layout_height="195dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/veganatonyveggeronipizza" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Varvacoa Heura"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tony Veggeroni"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#2D7AB7"
-            tools:context=".ActivityPizzas">
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
