@@ -3,6 +3,9 @@
     <style name="Base.Theme.Pizzeria" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#2D7AB7</item>
+        <item name="colorPrimaryDark">#2D7AB7</item>
+        <item name="colorAccent">#2D7AB7</item>
     </style>
 
     <style name="Theme.Pizzeria" parent="Base.Theme.Pizzeria" />
