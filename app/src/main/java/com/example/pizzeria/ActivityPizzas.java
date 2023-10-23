@@ -52,7 +52,7 @@ public class ActivityPizzas extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            cambiarActivity();
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -60,8 +60,8 @@ public class ActivityPizzas extends AppCompatActivity {
 
     public void cambiarActivity() {
 
-        startActivity(new Intent(ActivityPizzas.this, MainActivity.class));
-        finish();
+        //startActivity(new Intent(ActivityPizzas.this, MainActivity.class));
+        //finish();
 
     }
 

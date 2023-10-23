@@ -8,50 +8,82 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnElegir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E90030"
+        android:enabled="false"
         android:onClick="cambiarActivity"
         android:text="Elegir Pizza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.513" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E90030"
-        android:text="Configurar"
+        android:onClick="iniciarSesion"
+        android:text="Iniciar Sesión"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintTop_toBottomOf="@+id/btnElegir"
+        app:layout_constraintVertical_bias="0.154" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnConf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#E90030"
+        android:text="Configurar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciar" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
         android:backgroundTint="#E90030"
         android:onClick="cerrarAlpicacion"
         android:text="Salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConf"
+        app:layout_constraintVertical_bias="0.849" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="211dp"
         android:layout_height="207dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icono" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnElegir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.583" />
 </androidx.constraintlayout.widget.ConstraintLayout>
