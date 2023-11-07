@@ -58,10 +58,9 @@ public class ActivityPizzas extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void cambiarActivity() {
+    public void cambiarActivity(View v) {
 
-        //startActivity(new Intent(ActivityPizzas.this, MainActivity.class));
-        //finish();
+        startActivity(new Intent(ActivityPizzas.this, ActivityCreaPizza.class));
 
     }
 

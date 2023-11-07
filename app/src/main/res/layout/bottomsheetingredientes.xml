@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tituloIngredientes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="Ingredientes"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteAceitunas"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/aceitunas"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceitunas"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosAceitunas"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadAceitunas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasAceitunas"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteAnchoas"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/anchoas"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="York"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosAnchoas"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadAnchoas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasAnchoas"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteAtun"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/atun"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atun"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosAtun"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadAtun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasAtun"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteBacon"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bacon"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bacon"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosBacon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadBacon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasBacon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteBaconCrispy"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baconcrispy"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bacon Crispy"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosBaconCrispy"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadBaconCrispy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasBaconCrispy"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteCebolla"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cebolla"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cebolla"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosCebolla"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadCebolla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasCebolla"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteCebollaCaramelizada"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cebollacaramelizada"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cebolla Caramelizada"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosCebollaCaramelizada"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadCebollaCaramelizada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasCebollaCaramelizada"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteChampinon"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/champinon"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Champiñon"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosChampinon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadChampinon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasChampinon"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredienteMaiz"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/maiz"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maiz"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosMaiz"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadMaiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasMaiz"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredientePeperoni"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/peperoni"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peperoni"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosPeperoni"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadPeperoni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasPeperoni"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredientePimiento"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pimiento"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pimiento"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosPimiento"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadPimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasPimiento"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredientePina"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pina"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Piña"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosPina"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadPina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasPina"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredientePolloBuffalo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pollobuffalo"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pollo Buffalo"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosPolloBuffalo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadPolloBuffalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasPolloBuffalo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutIngredientePolloParrilla"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/polloparrilla"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pollo Parrilla"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="60dp"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnMenosPolloParrilla"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadPolloParrilla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnMasPolloParrilla"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

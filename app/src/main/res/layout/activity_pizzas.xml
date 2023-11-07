@@ -101,6 +101,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="cambiarActivity"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/hawaianapizza"
                         tools:ignore="SpeakableTextPresentCheck" />
