@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tituloQueso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Selecciona una queso"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_SinQueso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin Queso"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_QuesoMozzarella"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Queso Mozzarella"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_VeggiCheeseViolife"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VeggiCheese Violife"/>
+
+    </RadioGroup>
+
+    <TableRow
+        android:id="@+id/rowTituloCantidadQueso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E8E7E7">
+
+        <TextView
+            android:id="@+id/textViewTituloCantidadQueso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="Cantidad de queso"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rowCantidadQuesoPizza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp">
+
+        <Button
+            android:id="@+id/btnMenosCantidadQuesoPizza"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="10dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textViewCantidadQuesoPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Estandar" />
+
+        <Button
+            android:id="@+id/btnMasCantidadQuesoPizza"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:text="+" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rowBtnAñadirQuesoPizza"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnAñadirQuesoPizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF0000"
+            android:text="Añadir" />
+    </TableRow>
+
+
+</LinearLayout>

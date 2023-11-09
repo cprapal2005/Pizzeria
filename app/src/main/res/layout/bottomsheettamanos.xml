@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tituloTamano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Selecciona un tamaño"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_Familiar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Familiar"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_Mediana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mediana"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_Individual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Individual"/>
+
+    </RadioGroup>
+
+</LinearLayout>

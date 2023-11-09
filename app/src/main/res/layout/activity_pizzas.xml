@@ -432,7 +432,7 @@
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/polloparrilla"
+                        app:srcCompat="@drawable/polloparrillapizza"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton

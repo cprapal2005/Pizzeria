@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tituloSalsa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Selecciona una salsa"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_SinSalsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin salsa"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaBBQOriginal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa BBQ Original"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaRancheraBBQ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa Ranchera BBQ"/>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaTomate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa Tomate"/>
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_CremaFresca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crema Fresca"/>
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_CremaFrescaBarbacoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crema Fresca Barbacoa"/>
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaBourbon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa Bourbon"/>
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaBarbacoaTexas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa Barbacoa Texas"/>
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_SalsaCarbonaraMornay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salsa Carbonara Mornay"/>
+
+    </RadioGroup>
+
+</LinearLayout>

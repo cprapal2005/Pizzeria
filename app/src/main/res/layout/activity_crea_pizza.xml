@@ -100,10 +100,25 @@
                         android:id="@+id/btnTamañoPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:text="Tamaño: Mediana                                                           >"
+                        android:onClick="showBottomSheetTamano"
+                        android:text="Tamaño: Mediana"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnTamañoPizza2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="showBottomSheetTamano"
+                        android:text=">"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -122,10 +137,25 @@
                         android:id="@+id/btnMasaPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:text="Masa: Original                                                            >"
+                        android:onClick="showBottomSheetMasa"
+                        android:text="Masa: Original"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnMasaPizza2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="showBottomSheetMasa"
+                        android:text=">"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -144,10 +174,25 @@
                         android:id="@+id/btnSalsaPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:text="Salsa: Salsa ranchera BBQ                                                 >"
+                        android:onClick="showBottomSheetSalsa"
+                        android:text="Salsa: Salsa ranchera BBQ"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnSalsaPizza2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="showBottomSheetSalsa"
+                        android:text=">"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -166,10 +211,25 @@
                         android:id="@+id/btnQuesoPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:text="Queso: Queso 100% mozzarella                                          >"
+                        android:onClick="showBottomSheetQueso"
+                        android:text="Queso: Queso 100% mozzarella"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnQuesoPizza2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="showBottomSheetQueso"
+                        android:text=">"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -188,10 +248,25 @@
                         android:id="@+id/btnIngredientesPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:text="Ingredientes:                                                             >"
+                        android:onClick="showBottomSheetIngredientes"
+                        android:text="Ingredientes:"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/btnIngredientesPizza2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:onClick="showBottomSheetIngredientes"
+                        android:text=">"
+                        android:textAlignment="textEnd"
+                        android:textColor="#000000"
+                        android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/tituloMasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Selecciona una masa"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_Original"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Original"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_RollRoulette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Roll Roulette"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_MozzarellaRoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mozzarella Roll"/>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_CheddapeñoRoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cheddapeño Roll"/>
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_CabraRoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cabra Roll"/>
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_Finizzima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finizzima"/>
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_Pan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pan"/>
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+        <RadioButton
+            android:id="@+id/radio_VeggiThinCrust"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Veggi Thin Crust"/>
+
+    </RadioGroup>
+
+</LinearLayout>
