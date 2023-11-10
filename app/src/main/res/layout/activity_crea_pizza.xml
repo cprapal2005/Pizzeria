@@ -48,9 +48,10 @@
                     android:gravity="center">
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/imagenCreaPizza"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="#E8E7E7"
                         android:paddingTop="150dp"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/barbacoa" />

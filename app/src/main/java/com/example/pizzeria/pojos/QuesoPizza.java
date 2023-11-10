@@ -1,13 +1,16 @@
 package com.example.pizzeria.pojos;
 
-public class QuesoPizza {
-    //Sin_Queso, Queso_Mozzarella, VeggiCheese_Violife
-    // cantidadQueso    0 - 1 - 2
+public enum QuesoPizza {
+    Sin_Queso(0), Queso_Mozzarella(0), VeggiCheese_Violife(0);
     private int cantidadQueso;
     private double sumaPrecio;
     private final double precio = 1.8;
 
-    private QuesoPizza() {
+    private QuesoPizza(int cantidad) {
+
+        this.cantidadQueso = cantidad;
+        setCantidadQueso(cantidad);
+
     }
 
 

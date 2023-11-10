@@ -12,9 +12,18 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 
+import com.example.pizzeria.pojos.DaoIngredientes;
+import com.example.pizzeria.pojos.Ingrediente;
+import com.example.pizzeria.pojos.MasaPizza;
+import com.example.pizzeria.pojos.Pizza;
+import com.example.pizzeria.pojos.QuesoPizza;
+import com.example.pizzeria.pojos.SalsaPizza;
+import com.example.pizzeria.pojos.TamanoPizza;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.util.List;
 
 public class ActivityPizzas extends AppCompatActivity {
 
@@ -37,7 +46,7 @@ public class ActivityPizzas extends AppCompatActivity {
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                // Se ejecuta cuando se deselecciona un TabItem
+
             }
 
             @Override
@@ -56,6 +65,34 @@ public class ActivityPizzas extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void elegirPizza(View v) {
+
+        Pizza pizza;
+
+        //Deluxe
+
+        if(v.getId()==findViewById(R.id.btnHawaianaCrispyPizza).getId()) pizza = new Pizza("Hawaiana Plus", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Piña", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnParmesanaCarbonaraPizza).getId()) pizza = new Pizza("Parmesana Carbonara", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Sin_Queso, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Queso parmesano", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnCremozzaBourbonPizza).getId()) pizza = new Pizza("Cremozza Estilo Bourbon", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Bourbon, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnCremozzaBBQPizza).getId()) pizza = new Pizza("Cremozza BBQ", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca_Barbacoa, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnCheesixPizza).getId()) pizza = new Pizza("Cheesix", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Queso Parmesano", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnExtravaganzzaPizza).getId()) pizza = new Pizza("Extravaganzza", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("York", 1), new Ingrediente("Bacon", 1), new Ingrediente("Peperoni", 1), new Ingrediente("Aceitunas", 1), new Ingrediente("Champiñon", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Pimiento", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnVarvacoaHeuraPizza).getId()) pizza = new Pizza("Varvacoa Heura", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_BBQ_Original, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Veggi Chicken", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Maiz", 1)}));
+
+        else if(v.getId()==findViewById(R.id.btnTonyVeggeroniPizza).getId()) pizza = new Pizza("Tony Veggeroni", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Vegeroni", 1)}));
+
+        //Clazzicas
+
+
+
     }
 
     public void cambiarActivity(View v) {

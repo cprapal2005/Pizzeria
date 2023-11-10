@@ -95,7 +95,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton1"
+                        android:id="@+id/btnHawaianaCrispyPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -107,7 +107,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton2"
+                        android:id="@+id/btnParmesanaCarbonaraPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -148,7 +148,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton3"
+                        android:id="@+id/btnCremozzaBourbonPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -159,7 +159,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton4"
+                        android:id="@+id/btnCremozzaBBQPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -200,7 +200,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton5"
+                        android:id="@+id/btnCheesixPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -211,7 +211,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton6"
+                        android:id="@+id/btnExtravaganzzaPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -252,7 +252,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton7"
+                        android:id="@+id/btnVarvacoaHeuraPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -262,7 +262,7 @@
                         app:srcCompat="@drawable/veganavarvacoaheurapizza" />
 
                     <ImageButton
-                        android:id="@+id/imageButton8"
+                        android:id="@+id/btnTonyVeggeroniPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -321,7 +321,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton9"
+                        android:id="@+id/btnPecadoCarnalPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -332,7 +332,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton10"
+                        android:id="@+id/btnCarbonaraPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -373,7 +373,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton11"
+                        android:id="@+id/btnBarbacoaPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -384,7 +384,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton12"
+                        android:id="@+id/btnHawaianaPlusPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -425,7 +425,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton13"
+                        android:id="@+id/btnPolloParrillaPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -436,7 +436,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton14"
+                        android:id="@+id/btnCuatroQuesosPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -477,7 +477,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton15"
+                        android:id="@+id/btnTonyPepperoniPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -488,7 +488,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton16"
+                        android:id="@+id/btnCampiñaPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -547,7 +547,7 @@
                     android:layout_height="match_parent">
 
                     <ImageButton
-                        android:id="@+id/imageButton17"
+                        android:id="@+id/btnMargaritaPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"
@@ -558,7 +558,7 @@
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
-                        android:id="@+id/imageButton18"
+                        android:id="@+id/btnMitadesPizza"
                         android:layout_width="195dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="1dp"

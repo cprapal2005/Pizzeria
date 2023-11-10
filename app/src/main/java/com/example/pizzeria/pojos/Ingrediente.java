@@ -7,8 +7,10 @@ public class Ingrediente {
     private double sumaPrecio;
     private final double precio = 2.29;
 
-    public Ingrediente(String nombre) {
+    public Ingrediente(String nombre, int cantidad) {
+
         this.nombre = nombre;
+        setCantidadIngrediente(cantidad);
     }
 
     public String getNombre() {
