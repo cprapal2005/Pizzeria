@@ -60,6 +60,22 @@ public class Pizza implements Serializable {
 
     public int getImagenResourceId() { return imagenId;}
 
+    public void setTamanoPizza(TamanoPizza tamanoPizza) {
+        this.tamanoPizza = tamanoPizza;
+    }
+
+    public void setMasaPizza(MasaPizza masaPizza) {
+        this.masaPizza = masaPizza;
+    }
+
+    public void setQuesoPizza(QuesoPizza quesoPizza) {
+        this.quesoPizza = quesoPizza;
+    }
+
+    public void setSalsaPizza(SalsaPizza salsaPizza) {
+        this.salsaPizza = salsaPizza;
+    }
+
     @Override
     public String toString() {
         return "Pizza:" +

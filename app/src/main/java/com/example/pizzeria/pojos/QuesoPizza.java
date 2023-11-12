@@ -24,7 +24,7 @@ public enum QuesoPizza {
 
     public void setCantidadQueso(int cantidad) {
         this.cantidadQueso = cantidad;
-        this.sumaPrecio = precio * cantidad;
+        this.sumaPrecio = precio * cantidad+1;
     }
 
     public double getSumaPrecio() {
