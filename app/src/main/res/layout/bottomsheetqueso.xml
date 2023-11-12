@@ -17,6 +17,7 @@
         android:textStyle="bold"/>
 
     <RadioGroup
+        android:id="@+id/radioGroupQueso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,7 +26,7 @@
             android:id="@+id/radio_SinQueso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sin Queso"/>
+            android:text="Sin Queso" />
 
         <View
             android:id="@+id/divider"
@@ -37,7 +38,7 @@
             android:id="@+id/radio_QuesoMozzarella"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Queso Mozzarella"/>
+            android:text="Queso Mozzarella" />
 
         <View
             android:id="@+id/divider2"
@@ -49,7 +50,7 @@
             android:id="@+id/radio_VeggiCheeseViolife"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VeggiCheese Violife"/>
+            android:text="VeggiCheese Violife" />
 
     </RadioGroup>
 

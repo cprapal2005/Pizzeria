@@ -17,6 +17,7 @@
         android:textStyle="bold"/>
 
     <RadioGroup
+        android:id="@+id/radioGroupSalsa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,7 +26,7 @@
             android:id="@+id/radio_SinSalsa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sin salsa"/>
+            android:text="Sin salsa" />
 
         <View
             android:id="@+id/divider"
@@ -37,7 +38,7 @@
             android:id="@+id/radio_SalsaBBQOriginal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa BBQ Original"/>
+            android:text="Salsa BBQ Original" />
 
         <View
             android:id="@+id/divider2"
@@ -49,7 +50,7 @@
             android:id="@+id/radio_SalsaRancheraBBQ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa Ranchera BBQ"/>
+            android:text="Salsa Ranchera BBQ" />
 
         <View
             android:id="@+id/divider3"
@@ -61,7 +62,7 @@
             android:id="@+id/radio_SalsaTomate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa Tomate"/>
+            android:text="Salsa Tomate" />
 
         <View
             android:id="@+id/divider4"
@@ -73,7 +74,7 @@
             android:id="@+id/radio_CremaFresca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crema Fresca"/>
+            android:text="Crema Fresca" />
 
         <View
             android:id="@+id/divider5"
@@ -85,7 +86,7 @@
             android:id="@+id/radio_CremaFrescaBarbacoa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Crema Fresca Barbacoa"/>
+            android:text="Crema Fresca Barbacoa" />
 
         <View
             android:id="@+id/divider6"
@@ -97,7 +98,7 @@
             android:id="@+id/radio_SalsaBourbon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa Bourbon"/>
+            android:text="Salsa Bourbon" />
 
         <View
             android:id="@+id/divider7"
@@ -109,7 +110,7 @@
             android:id="@+id/radio_SalsaBarbacoaTexas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa Barbacoa Texas"/>
+            android:text="Salsa Barbacoa Texas" />
 
         <View
             android:id="@+id/divider8"
@@ -121,7 +122,7 @@
             android:id="@+id/radio_SalsaCarbonaraMornay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salsa Carbonara Mornay"/>
+            android:text="Salsa Carbonara Mornay" />
 
     </RadioGroup>
 

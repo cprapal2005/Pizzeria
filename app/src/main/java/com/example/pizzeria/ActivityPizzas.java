@@ -69,35 +69,53 @@ public class ActivityPizzas extends AppCompatActivity {
 
     public void elegirPizza(View v) {
 
-        Pizza pizza;
+        Pizza pizza = null;
 
         //Deluxe
 
-        if(v.getId()==findViewById(R.id.btnHawaianaCrispyPizza).getId()) pizza = new Pizza("Hawaiana Plus", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Piña", 1)}));
+        if(v.getId()==findViewById(R.id.btnHawaianaCrispyPizza).getId()) pizza = new Pizza("Hawaiana Plus", "Base de salsa Mornay, queso 100% mozzarella, bacon, bacon crispy y piña.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Piña", 1)}), R.drawable.hawaianapizza);
 
-        else if(v.getId()==findViewById(R.id.btnParmesanaCarbonaraPizza).getId()) pizza = new Pizza("Parmesana Carbonara", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Sin_Queso, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Queso parmesano", 1)}));
+        else if(v.getId()==findViewById(R.id.btnParmesanaCarbonaraPizza).getId()) pizza = new Pizza("Parmesana Carbonara","Salsa carbonara Mornay, queso 100% mozzarella, cheddar, emmental, parmesano, cebolla, bacon y bacon crispy.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Sin_Queso, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Queso parmesano", 1)}), R.drawable.carbonara);
 
-        else if(v.getId()==findViewById(R.id.btnCremozzaBourbonPizza).getId()) pizza = new Pizza("Cremozza Estilo Bourbon", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Bourbon, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}));
+        else if(v.getId()==findViewById(R.id.btnCremozzaBourbonPizza).getId()) pizza = new Pizza("Cremozza Estilo Bourbon","Base de crema fresca, queso 100% mozzarella, bacon, pollo a la parrilla, cebolla, salsa Bourbon (0% Alcohol).", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Bourbon, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}), R.drawable.cremozzabourbonpizza);
 
-        else if(v.getId()==findViewById(R.id.btnCremozzaBBQPizza).getId()) pizza = new Pizza("Cremozza BBQ", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca_Barbacoa, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}));
+        else if(v.getId()==findViewById(R.id.btnCremozzaBBQPizza).getId()) pizza = new Pizza("Cremozza BBQ","Base de crema fresca, queso 100% mozzarella, bacon, pollo a la parrilla, cebolla, salsa barbacoa.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca_Barbacoa, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Cebolla", 1)}), R.drawable.cremozzabbqpizza);
 
-        else if(v.getId()==findViewById(R.id.btnCheesixPizza).getId()) pizza = new Pizza("Cheesix", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Queso Parmesano", 1)}));
+        else if(v.getId()==findViewById(R.id.btnCheesixPizza).getId()) pizza = new Pizza("Cheesix","Crema fresca, queso 100% mozzarella, cheddar, emmental, parmesano, gorgonzola, queso de cabra.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Queso Parmesano", 1)}), R.drawable.cheesixpizza);
 
-        else if(v.getId()==findViewById(R.id.btnExtravaganzzaPizza).getId()) pizza = new Pizza("Extravaganzza", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("York", 1), new Ingrediente("Bacon", 1), new Ingrediente("Peperoni", 1), new Ingrediente("Aceitunas", 1), new Ingrediente("Champiñon", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Pimiento", 1)}));
+        else if(v.getId()==findViewById(R.id.btnExtravaganzzaPizza).getId()) pizza = new Pizza("Extravaganzza","Salsa de tomate, mozzarella, carne de vacuno, pepperoni, York, bacon, cebolla, pimiento verde, champiñón y aceitunas negras.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("York", 1), new Ingrediente("Bacon", 1), new Ingrediente("Peperoni", 1), new Ingrediente("Aceitunas", 1), new Ingrediente("Champiñon", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Pimiento", 1)}), R.drawable.extravaganzzapizza);
 
-        else if(v.getId()==findViewById(R.id.btnVarvacoaHeuraPizza).getId()) pizza = new Pizza("Varvacoa Heura", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_BBQ_Original, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Veggi Chicken", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Maiz", 1)}));
+        else if(v.getId()==findViewById(R.id.btnVarvacoaHeuraPizza).getId()) pizza = new Pizza("Varvacoa Heura","Salsa de bbq, VeggiCheese Violife, VeggiChicken de Heura, cebolla y maíz. Con masa veggi Thin Crust.", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_BBQ_Original, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Veggi Chicken", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Maiz", 1)}), R.drawable.veganavarvacoaheurapizza);
 
-        else if(v.getId()==findViewById(R.id.btnTonyVeggeroniPizza).getId()) pizza = new Pizza("Tony Veggeroni", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Vegeroni", 1)}));
+        else if(v.getId()==findViewById(R.id.btnTonyVeggeroniPizza).getId()) pizza = new Pizza("Tony Veggeroni","Salsa de tomate, VeggiCheese Violife, Vegeroni. Con masa veggi Thin Crust.", TamanoPizza.Familiar, MasaPizza.Veggi_Thin_Crust, QuesoPizza.VeggiCheese_Violife, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Vegeroni", 1)}), R.drawable.veganatonyveggeronipizza);
 
         //Clazzicas
 
+        else if(v.getId()==findViewById(R.id.btnPecadoCarnalPizza).getId()) pizza = new Pizza("Pecado Carnal","Salsa de tomate, extra de queso 100% mozzarella, carne de vacuno, bacon, pepperoni, york.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("York", 1), new Ingrediente("Bacon", 1), new Ingrediente("Peperoni", 1)}), R.drawable.pecadocarnal);
 
+        else if(v.getId()==findViewById(R.id.btnCarbonaraPizza).getId()) pizza = new Pizza("Carbonara","Crema fresca, queso 100% mozzarella, bacon, champiñón y cebolla.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Crema_Fresca, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Champiñon", 1), new Ingrediente("Bacon", 1), new Ingrediente("Cebolla", 1)}), R.drawable.carbonara);
 
-    }
+        else if(v.getId()==findViewById(R.id.btnBarbacoaPizza).getId()) pizza = new Pizza("Barbacoa","Salsa barbacoa, queso 100% mozzarella,carne de vacuno, cebolla, bacon, maíz.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_BBQ_Original, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Cebolla", 1), new Ingrediente("Bacon", 1), new Ingrediente("Maiz", 1)}), R.drawable.barbacoa);
 
-    public void cambiarActivity(View v) {
+        else if(v.getId()==findViewById(R.id.btnHawaianaPlusPizza).getId()) pizza = new Pizza("Hawaiana Plus","Salsa de tomate, extra de queso 100% mozzarella, doble de York y piña.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("York", 1), new Ingrediente("Piña", 1)}), R.drawable.hawaiana);
 
-        startActivity(new Intent(ActivityPizzas.this, ActivityCreaPizza.class));
+        else if(v.getId()==findViewById(R.id.btnPolloParrillaPizza).getId()) pizza = new Pizza("Pollo a la parrilla","Salsa de tomate, queso 100% mozzarella, doble de pollo a la parrilla, cebolla, champiñón y maíz.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Pollo Parrilla", 1), new Ingrediente("Maiz", 1), new Ingrediente("Champiñon", 1), new Ingrediente("Cebolla", 1)}), R.drawable.polloparrillapizza);
+
+        else if(v.getId()==findViewById(R.id.btnCuatroQuesosPizza).getId()) pizza = new Pizza("Cuatro Quesos","Salsa de tomate, queso 100% mozzarella, cheddar, emmental, gorgonzola (receta mejorada).", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Queso Parmesano", 1)}), R.drawable.cuatroquesos);
+
+        else if(v.getId()==findViewById(R.id.btnTonyPepperoniPizza).getId()) pizza = new Pizza("Tony Pepperoni","Salsa de tomate, extra de queso 100% mozzarella y doble de pepperoni.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Peperoni", 1)}), R.drawable.tonypepperoni);
+
+        else if(v.getId()==findViewById(R.id.btnCampiñaPizza).getId()) pizza = new Pizza("Campiña","Salsa de tomate, extra de queso 100% mozzarella, champiñón, pimiento verde, cebolla, aceitunas negras y tomate natural.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Pimiento", 1), new Ingrediente("Tomate", 1), new Ingrediente("Aceitunas", 1), new Ingrediente("Champiñon", 1), new Ingrediente("Cebolla", 1)}), R.drawable.campi_a);
+
+        //Elegir
+
+        else if(v.getId()==findViewById(R.id.btnMargaritaPizza).getId()) pizza = new Pizza("Margarita","Sobre una base de salsa de tomate y queso 100% mozzarella, añade los ingredientes que tú quieras.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Tomate, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{}), R.drawable.margarita);
+
+        Intent intent = new Intent(ActivityPizzas.this, ActivityCreaPizza.class);
+
+        intent.putExtra("pizzaElegida", pizza);
+        
+        startActivity(intent);
 
     }
 

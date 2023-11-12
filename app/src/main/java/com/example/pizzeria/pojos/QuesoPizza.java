@@ -1,18 +1,22 @@
 package com.example.pizzeria.pojos;
 
 public enum QuesoPizza {
-    Sin_Queso(0), Queso_Mozzarella(0), VeggiCheese_Violife(0);
+    Sin_Queso("Sin queso", 0), Queso_Mozzarella("Queso 100% mozzarella", 0), VeggiCheese_Violife("VeggiCheese Violife", 0);
+
+    private final String nombre;
     private int cantidadQueso;
     private double sumaPrecio;
     private final double precio = 1.8;
 
-    private QuesoPizza(int cantidad) {
+    private QuesoPizza(final String nombre, int cantidad) {
 
+        this.nombre=nombre;
         this.cantidadQueso = cantidad;
         setCantidadQueso(cantidad);
 
     }
 
+    public String getNombre() { return nombre; }
 
     public int getCantidadQueso() {
         return cantidadQueso;

@@ -101,7 +101,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
-                        android:onClick="cambiarActivity"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/hawaianapizza"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -113,6 +113,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/carbonara"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -154,6 +155,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/cremozzabourbonpizza"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -165,6 +167,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/cremozzabbqpizza"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -206,6 +209,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/cheesixpizza"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -217,6 +221,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/extravaganzzapizza"
                         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -258,6 +263,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/veganavarvacoaheurapizza" />
 
@@ -268,6 +274,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/veganatonyveggeronipizza" />
                 </TableRow>
@@ -327,6 +334,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/pecadocarnal"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -338,6 +346,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/carbonara"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -379,6 +388,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/barbacoa"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -390,6 +400,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/hawaiana"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -431,6 +442,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/polloparrillapizza"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -442,6 +454,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/cuatroquesos"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -483,6 +496,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/tonypepperoni"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -494,6 +508,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/campi_a"
                         tools:ignore="SpeakableTextPresentCheck" />
@@ -553,6 +568,7 @@
                         android:layout_marginLeft="1dp"
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
+                        android:onClick="elegirPizza"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/margarita"
                         tools:ignore="SpeakableTextPresentCheck" />

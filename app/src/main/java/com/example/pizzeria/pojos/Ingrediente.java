@@ -1,6 +1,8 @@
 package com.example.pizzeria.pojos;
 
-public class Ingrediente {
+import java.io.Serializable;
+
+public class Ingrediente implements Serializable {
 
     private String nombre;
     private int cantidadIngrediente; // 0 - 1 - 2

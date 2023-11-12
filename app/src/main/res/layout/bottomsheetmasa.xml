@@ -17,6 +17,7 @@
         android:textStyle="bold"/>
 
     <RadioGroup
+        android:id="@+id/radioGroupMasa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,7 +26,7 @@
             android:id="@+id/radio_Original"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Original"/>
+            android:text="Original" />
 
         <View
             android:id="@+id/divider"
@@ -37,7 +38,7 @@
             android:id="@+id/radio_RollRoulette"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Roll Roulette"/>
+            android:text="Roll Roulette" />
 
         <View
             android:id="@+id/divider2"
@@ -49,7 +50,7 @@
             android:id="@+id/radio_MozzarellaRoll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mozzarella Roll"/>
+            android:text="Mozzarella Roll" />
 
         <View
             android:id="@+id/divider3"
@@ -61,7 +62,7 @@
             android:id="@+id/radio_CheddapeñoRoll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cheddapeño Roll"/>
+            android:text="Cheddapeño Roll" />
 
         <View
             android:id="@+id/divider4"
@@ -73,7 +74,7 @@
             android:id="@+id/radio_CabraRoll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cabra Roll"/>
+            android:text="Cabra Roll" />
 
         <View
             android:id="@+id/divider5"
@@ -85,7 +86,7 @@
             android:id="@+id/radio_Finizzima"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Finizzima"/>
+            android:text="Finizzima" />
 
         <View
             android:id="@+id/divider6"
@@ -97,7 +98,7 @@
             android:id="@+id/radio_Pan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pan"/>
+            android:text="Pan" />
 
         <View
             android:id="@+id/divider7"
@@ -109,7 +110,7 @@
             android:id="@+id/radio_VeggiThinCrust"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Veggi Thin Crust"/>
+            android:text="Veggi Thin Crust" />
 
     </RadioGroup>
 
