@@ -73,7 +73,7 @@ public class ActivityPizzas extends AppCompatActivity {
 
         //Deluxe
 
-        if(v.getId()==findViewById(R.id.btnHawaianaCrispyPizza).getId()) pizza = new Pizza("Hawaiana Plus", "Base de salsa Mornay, queso 100% mozzarella, bacon, bacon crispy y piña.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Piña", 1)}), R.drawable.hawaianapizza);
+        if(v.getId()==findViewById(R.id.btnHawaianaCrispyPizza).getId()) pizza = new Pizza("Hawaiana Plus", "Base de salsa Mornay, queso 100% mozzarella, bacon, bacon crispy y piña.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Queso_Mozzarella, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Baco   n", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Piña", 1)}), R.drawable.hawaianapizza);
 
         else if(v.getId()==findViewById(R.id.btnParmesanaCarbonaraPizza).getId()) pizza = new Pizza("Parmesana Carbonara","Salsa carbonara Mornay, queso 100% mozzarella, cheddar, emmental, parmesano, cebolla, bacon y bacon crispy.", TamanoPizza.Familiar, MasaPizza.Original, QuesoPizza.Sin_Queso, SalsaPizza.Salsa_Carbonara_Mornay, DaoIngredientes.getStatic().getIngredientes(new Ingrediente[]{new Ingrediente("Bacon", 1), new Ingrediente("Bacon Crispy", 1), new Ingrediente("Cebolla", 1), new Ingrediente("Queso parmesano", 1)}), R.drawable.carbonara);
 
