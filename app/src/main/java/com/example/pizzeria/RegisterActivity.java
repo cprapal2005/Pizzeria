@@ -11,11 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pizzeria.pojos.DaoUsuarios;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText usernameRegister;
     private EditText passwordRegister;
     private Button registerButton;
+    private BaseDatosHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         usernameRegister = findViewById(R.id.usernameRegister);
         passwordRegister = findViewById(R.id.passwordRegister);
         registerButton = findViewById(R.id.btnCrearCuenta);
+        dbHelper = new BaseDatosHelper(this);
 
 
     }
@@ -47,8 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
     public void registrar(View view) {
 
         if(usernameRegister.getText().length()>1 && passwordRegister.getText().length()>1) {
-            SharedPreferencesUtils.saveCredentials(getApplicationContext(), usernameRegister.getText().toString(), passwordRegister.getText().toString());
-            finish();
+            if(DaoUsuarios.getStatic().insertarUsuario(dbHelper, usernameRegister.getText().toString(), passwordRegister.getText().toString())) finish();
+            else Toast.makeText(getApplicationContext(), "Error en la inserccion", Toast.LENGTH_SHORT).show();
         }
 
         else Toast.makeText(getApplicationContext(), "Credenciales Incorrectas", Toast.LENGTH_SHORT).show();

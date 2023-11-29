@@ -14,9 +14,9 @@ public class Pizza implements Serializable {
     private QuesoPizza quesoPizza;
     private SalsaPizza salsaPizza;
     private ArrayList<Ingrediente> listaIngredientes;
-    private int imagenId;
+    private String imagenId;
 
-    public Pizza(String nombre, String descripcion, TamanoPizza tamanoPizza, MasaPizza masaPizza, QuesoPizza quesoPizza, SalsaPizza salsaPizza, ArrayList<Ingrediente> listaIngredientes, int imagenId) {
+    public Pizza(String nombre, String descripcion, TamanoPizza tamanoPizza, MasaPizza masaPizza, QuesoPizza quesoPizza, SalsaPizza salsaPizza, ArrayList<Ingrediente> listaIngredientes, String imagenId) {
         this.id = contador++;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -58,7 +58,7 @@ public class Pizza implements Serializable {
         return listaIngredientes;
     }
 
-    public int getImagenResourceId() { return imagenId;}
+    public String getImagenResourceId() { return imagenId;}
 
     public void setTamanoPizza(TamanoPizza tamanoPizza) {
         this.tamanoPizza = tamanoPizza;

@@ -19,7 +19,7 @@ public class DaoIngredientes {
 
     }
 
-    public ArrayList<Ingrediente> getIngredientes(Ingrediente[] listaIngredientes) {
+    public ArrayList<Ingrediente> getIngredientes(ArrayList<Ingrediente> listaIngredientes) {
 
         ArrayList<Ingrediente> arrayIngredientes = new ArrayList<Ingrediente>();
 

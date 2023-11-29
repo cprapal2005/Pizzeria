@@ -12,11 +12,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pizzeria.pojos.DaoUsuarios;
+
 public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
     private Button registerButton;
+    private BaseDatosHelper dbHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.btnLogin);
         registerButton = findViewById(R.id.btnRegister);
+        dbHelper = new BaseDatosHelper(this);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean inicioSesion = SharedPreferencesUtils.areCredentialsValid(getApplicationContext(), usernameEditText.getText().toString(), passwordEditText.getText().toString());
+                boolean inicioSesion = DaoUsuarios.getStatic().loginUsuario(dbHelper, usernameEditText.getText().toString(), passwordEditText.getText().toString());
                 if(inicioSesion) {
                     updateUiWithUser();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));

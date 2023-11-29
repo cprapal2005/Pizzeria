@@ -5,8 +5,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -25,6 +27,9 @@ import com.example.pizzeria.pojos.Pizza;
 import com.example.pizzeria.pojos.QuesoPizza;
 import com.example.pizzeria.pojos.SalsaPizza;
 import com.example.pizzeria.pojos.TamanoPizza;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ActivityCreaPizza extends AppCompatActivity {
 
@@ -61,7 +66,16 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         ImageView imagenCreaPizza = findViewById(R.id.imagenCreaPizza);
 
-        imagenCreaPizza.setImageResource(pizza.getImagenResourceId());
+        AssetManager assetManager = getAssets();
+
+        try {
+            InputStream stream = assetManager.open(pizza.getImagenResourceId());
+            Drawable drawable = Drawable.createFromStream(stream, null);
+            imagenCreaPizza.setImageDrawable(drawable);
+            stream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         TextView textViewDescripcionPizza = findViewById(R.id.textViewDescripcionPizza);
 
