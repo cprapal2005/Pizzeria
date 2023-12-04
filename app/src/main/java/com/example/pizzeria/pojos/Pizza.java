@@ -76,6 +76,20 @@ public class Pizza implements Serializable {
         this.salsaPizza = salsaPizza;
     }
 
+    public double getPrecio() {
+
+        double precioFinal = 0;
+
+        precioFinal += this.tamanoPizza.getSumaPrecio();
+        precioFinal += this.masaPizza.getSumaPrecio();
+        precioFinal += this.quesoPizza.getSumaPrecio();
+
+        precioFinal += listaIngredientes.stream().mapToDouble(Ingrediente::getSumaPrecio).sum();
+
+        return precioFinal;
+
+    }
+
     @Override
     public String toString() {
         return "Pizza:" +

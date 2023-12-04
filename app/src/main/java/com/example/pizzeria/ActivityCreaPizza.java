@@ -34,6 +34,7 @@ import java.io.InputStream;
 public class ActivityCreaPizza extends AppCompatActivity {
 
     Pizza pizza;
+    Pizza pizzaDefault;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         if (intent.hasExtra("pizzaElegida")) {
 
             pizza = (Pizza) intent.getSerializableExtra("pizzaElegida");
+            pizzaDefault = new Pizza(pizza.getNombre(), pizza.getDescripcion(), pizza.getTamanoPizza(), pizza.getMasaPizza(), pizza.getQuesoPizza(), pizza.getSalsaPizza(), pizza.getListaIngredientes(), pizza.getImagenResourceId());
 
             mostrarInformacionEnUI(pizza);
 
@@ -107,6 +109,20 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void añadirPizza(View view) {
+
+        Intent intent = new Intent(ActivityCreaPizza.this, ActivityCesta.class);
+
+        intent.putExtra("pizzaElegida", pizza);
+
+        intent.putExtra("pizzaDefault", pizzaDefault);
+
+        startActivity(intent);
+
+        finish();
+
     }
 
     public void showBottomSheetTamano(View view) {

@@ -36,12 +36,12 @@
         app:layout_constraintVertical_bias="0.154" />
 
     <Button
-        android:id="@+id/btnConf"
+        android:id="@+id/btnFavoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="#E90030"
-        android:text="Configurar"
+        android:text="Favoritos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConf"
+        app:layout_constraintTop_toBottomOf="@+id/btnFavoritos"
         app:layout_constraintVertical_bias="0.849" />
 
     <ImageView

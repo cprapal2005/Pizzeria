@@ -74,6 +74,7 @@
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:gravity="center"
+                        android:onClick="borrarPizza"
                         android:textAlignment="textEnd"
                         android:textColor="#000000"
                         android:textStyle="bold"
@@ -95,9 +96,13 @@
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:gravity="center"
+                        android:onClick="informacionPizza"
+                        android:text="Ver Informacion"
                         android:textAlignment="viewStart"
-                        android:textAllCaps="false"
                         android:textColor="#00BCD4"
+                        android:textColorHighlight="#00BCD4"
+                        android:textColorHint="#00BCD4"
+                        android:textColorLink="#00BCD4"
                         android:textStyle="italic"
                         app:iconGravity="textEnd"
                         app:iconTint="#000000"
@@ -110,6 +115,8 @@
                         android:layout_weight="1"
                         android:background="#00FFFFFF"
                         android:gravity="center"
+                        android:onClick="modificarPizza"
+                        android:text="Modificar"
                         android:textAlignment="textEnd"
                         android:textAllCaps="false"
                         android:textColor="#00BCD4"
@@ -122,11 +129,43 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/rowVaciaCesta1"
+                    android:id="@+id/rowInformacionCesta1"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:background="#D1D1D1"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/textViewInformacionPizza"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/rowFavoritoCesta1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAligned="false"
+                    android:paddingBottom="10dp">
+
+                    <Switch
+                        android:id="@+id/switchFavorito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:checked="false"
+                        android:onClick="activarFavorito"
+                        android:text="Favorito" />
+
+                    <EditText
+                        android:id="@+id/textFavorito"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:enabled="false"
+                        android:inputType="text"
+                        android:text="Nombre" />
+                </TableRow>
 
                 <TableRow
                     android:id="@+id/rowCestaBtnConfirmarPizzas"
