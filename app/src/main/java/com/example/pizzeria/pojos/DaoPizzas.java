@@ -1,11 +1,14 @@
 package com.example.pizzeria.pojos;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.pizzeria.BaseDatosHelper;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class DaoPizzas {
@@ -64,6 +67,142 @@ public class DaoPizzas {
         dbHelper.close();
 
         return arrayListPizzas;
+
+    }
+
+    public boolean insertarPizzaDefault(BaseDatosHelper dbHelper, Pizza pizza, boolean favorito) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+        ContentValues values = new ContentValues();
+        values.put("usuario", "christian");
+        values.put("idPizza", pizza.getId());
+        values.put("fecha", formatter.format(new java.util.Date()));
+
+        long newRowId = db.insert("HistorialPizza", null, values);
+
+        if (newRowId != -1) {
+
+            if(favorito) {
+
+                values = new ContentValues();
+                values.put("usuario", "christian");
+                values.put("idPizza", pizza.getId());
+                values.put("nombre", pizza.getNombre());
+
+                newRowId = db.insert("FavoritosUsuario", null, values);
+
+                if (newRowId != -1) {
+
+                    db.close();
+                    return true;
+
+                }
+
+                else {
+                    db.close();
+                    return  false;
+                }
+
+            }
+
+            else {
+                db.close();
+                return  true;
+            }
+
+        } else {
+            db.close();
+            return  false;
+        }
+
+    }
+
+    public boolean insertarPizzaModificada(BaseDatosHelper dbHelper, Pizza pizza, boolean favorito) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+        ContentValues values = new ContentValues();
+        values.put("nombre", pizza.getNombre());
+        values.put("descripcion", pizza.getDescripcion());
+        values.put("tamanoPizza", pizza.getTamanoPizza().getNombre());
+        values.put("masaPizza", pizza.getMasaPizza().getNombre());
+        values.put("quesoPizza", pizza.getQuesoPizza().getNombre());
+        values.put("salsaPizza", pizza.getSalsaPizza().getNombre());
+        values.put("imagenId", pizza.getImagenResourceId());
+
+        long newRowId = db.insert("Pizza", null, values);
+
+        if (newRowId != -1) {
+
+            for (int i = 0; i < pizza.getListaIngredientes().size(); i++) {
+
+                if (pizza.getListaIngredientes().get(i).getCantidadIngrediente() > 0) {
+
+                    values = new ContentValues();
+                    values.put("idPizza", pizza.getId());
+                    values.put("idIngrediente", (i+1));
+                    values.put("cantidadIngrediente", pizza.getListaIngredientes().get(i).getCantidadIngrediente());
+
+                    newRowId = db.insert("IngredientePizza", null, values);
+
+                    if (newRowId == -1) {
+                        db.close();
+                        return false;
+                    }
+                }
+            }
+
+            if (newRowId != -1) {
+
+                values = new ContentValues();
+                values.put("usuario", "christian");
+                values.put("idPizza", pizza.getId());
+                values.put("fecha", formatter.format(new java.util.Date()));
+
+                newRowId = db.insert("HistorialPizza", null, values);
+
+                if (newRowId != -1) {
+
+                    if (favorito) {
+
+                        values = new ContentValues();
+                        values.put("usuario", "christian");
+                        values.put("idPizza", pizza.getId());
+                        values.put("nombre", pizza.getNombre());
+
+                        newRowId = db.insert("FavoritosUsuario", null, values);
+
+                        if (newRowId != -1) {
+
+                            db.close();
+                            return true;
+
+                        } else {
+                            db.close();
+                            return false;
+                        }
+
+                    } else {
+                        db.close();
+                        return true;
+                    }
+
+                } else {
+                    db.close();
+                    return false;
+                }
+
+            }
+
+        } else {
+            db.close();
+            return false;
+        }
+
+        return true;
 
     }
 

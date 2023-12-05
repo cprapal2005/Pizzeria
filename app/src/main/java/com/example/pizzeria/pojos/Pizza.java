@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Pizza implements Serializable {
 
-    private static int contador = 0;
+    private static int contador = 1;
     private int id;
     private String nombre;
     private String descripcion;
@@ -34,6 +34,10 @@ public class Pizza implements Serializable {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+         this.nombre = nombre;
     }
 
     public String getDescripcion() { return descripcion; };

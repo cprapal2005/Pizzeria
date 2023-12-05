@@ -32,11 +32,6 @@ public class BaseDatosHelper extends SQLiteOpenHelper {
         // Ruta a la ubicación donde se verificará si la base de datos ya existe
         String outFileName = context.getDatabasePath(DATABASE_NAME).getPath();
 
-        // Verifica si la base de datos ya existe
-        if (new File(outFileName).exists()) {
-            return; // La base de datos ya está presente, no es necesario copiarla
-        }
-
         InputStream myInput = null;
         try {
             myInput = context.getAssets().open("Pizzeria.db");

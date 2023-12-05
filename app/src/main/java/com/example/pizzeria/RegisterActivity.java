@@ -17,7 +17,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText usernameRegister;
     private EditText passwordRegister;
-    private Button registerButton;
     private BaseDatosHelper dbHelper;
 
     @Override
@@ -31,7 +30,6 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_ios_24);
         usernameRegister = findViewById(R.id.usernameRegister);
         passwordRegister = findViewById(R.id.passwordRegister);
-        registerButton = findViewById(R.id.btnCrearCuenta);
         dbHelper = new BaseDatosHelper(this);
 
 

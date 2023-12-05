@@ -10,7 +10,6 @@ public class Ingrediente implements Serializable {
     private final double precio = 2.29;
 
     public Ingrediente(String nombre, int cantidad) {
-
         this.nombre = nombre;
         setCantidadIngrediente(cantidad);
     }

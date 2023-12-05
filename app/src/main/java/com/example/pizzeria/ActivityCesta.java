@@ -17,7 +17,10 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.pizzeria.pojos.DaoPizzas;
+import com.example.pizzeria.pojos.DaoUsuarios;
 import com.example.pizzeria.pojos.Ingrediente;
 import com.example.pizzeria.pojos.Pizza;
 
@@ -27,7 +30,8 @@ import java.io.InputStream;
 public class ActivityCesta extends AppCompatActivity {
 
     Pizza pizza;
-    Pizza pizzaDefault;
+    Pizza pizzaModificada;
+    private BaseDatosHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +42,15 @@ public class ActivityCesta extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_ios_24);
-
+        dbHelper = new BaseDatosHelper(this);
         Intent intent = getIntent();
 
         if (intent.hasExtra("pizzaElegida")) {
 
             pizza = (Pizza) intent.getSerializableExtra("pizzaElegida");
-            pizzaDefault = (Pizza) intent.getSerializableExtra("pizzaDefault");
+            pizzaModificada = (Pizza) intent.getSerializableExtra("pizzaModificada");
 
-            mostrarInformacionEnUI(pizza);
+            mostrarInformacionEnUI(pizzaModificada);
 
         }
 
@@ -66,7 +70,7 @@ public class ActivityCesta extends AppCompatActivity {
 
         Intent intent = new Intent(ActivityCesta.this, ActivityCreaPizza.class);
 
-        intent.putExtra("pizzaElegida", pizza);
+        intent.putExtra("pizzaElegida", pizzaModificada);
 
         startActivity(intent);
 
@@ -82,14 +86,14 @@ public class ActivityCesta extends AppCompatActivity {
 
         TextView textViewInformacionPizza = findViewById(R.id.textViewInformacionPizza);
 
-        String informacionPizzaString = "Tamaño: " + pizza.getTamanoPizza().getNombre() + " " + pizza.getTamanoPizza().getSumaPrecio() + "€\n\n" +
-                "Masa: " + pizza.getMasaPizza().getNombre() + " " + pizza.getMasaPizza().getSumaPrecio() + "€\n\n" +
-                "Queso: " + pizza.getQuesoPizza().getNombre() + " | Cantidad " + pizza.getQuesoPizza().getCantidadQueso() + " | " + pizza.getQuesoPizza().getSumaPrecio() + "€\n\n" +
-                "Salsa: " + pizza.getSalsaPizza().getNombre() + "\n\n";
+        String informacionPizzaString = "Tamaño: " + pizzaModificada.getTamanoPizza().getNombre() + " " + pizzaModificada.getTamanoPizza().getSumaPrecio() + "€\n\n" +
+                "Masa: " + pizzaModificada.getMasaPizza().getNombre() + " " + pizzaModificada.getMasaPizza().getSumaPrecio() + "€\n\n" +
+                "Queso: " + pizzaModificada.getQuesoPizza().getNombre() + " | Cantidad " + pizzaModificada.getQuesoPizza().getCantidadQueso() + " | " + pizzaModificada.getQuesoPizza().getSumaPrecio() + "€\n\n" +
+                "Salsa: " + pizzaModificada.getSalsaPizza().getNombre() + "\n\n";
 
         informacionPizzaString += "Ingredientes: \n";
 
-        for (Ingrediente ingrediente : pizza.getListaIngredientes()) {
+        for (Ingrediente ingrediente : pizzaModificada.getListaIngredientes()) {
             if(ingrediente.getCantidadIngrediente()>0) informacionPizzaString += ingrediente.getNombre() + ": " + ingrediente.getCantidadIngrediente() + " - " + ingrediente.getSumaPrecio() + "€\n";
         }
 
@@ -124,6 +128,68 @@ public class ActivityCesta extends AppCompatActivity {
         if(switchFavorito.isChecked()) textFavorito.setEnabled(true);
 
         else textFavorito.setEnabled(false);
+
+    }
+
+    public void confirmarCompra(View view) {
+
+        Switch switchFavorito = findViewById(R.id.switchFavorito);
+
+        EditText textFavorito = findViewById(R.id.textFavorito);
+
+        boolean diferente = false;
+        if(!pizza.getTamanoPizza().getNombre().equals(pizzaModificada.getTamanoPizza().getNombre())) diferente=true;
+        if(!pizza.getMasaPizza().getNombre().equals(pizzaModificada.getMasaPizza().getNombre())) diferente=true;
+        if(!pizza.getQuesoPizza().getNombre().equals(pizzaModificada.getQuesoPizza().getNombre())) diferente=true;
+        if(!pizza.getSalsaPizza().getNombre().equals(pizzaModificada.getSalsaPizza().getNombre())) diferente=true;
+        for (int i = 0; i < pizza.getListaIngredientes().size(); i++) {
+
+            if(pizza.getListaIngredientes().get(i).getCantidadIngrediente()!=pizzaModificada.getListaIngredientes().get(i).getCantidadIngrediente()) diferente=true;
+
+        }
+
+        if(diferente && switchFavorito.isChecked()) {
+
+            pizzaModificada.setNombre(textFavorito.getText().toString());
+            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, true)) {
+                Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else Toast.makeText(getApplicationContext(), "Error en la inserccion", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+        else if(diferente) {
+
+            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, false)) {
+                Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else Toast.makeText(getApplicationContext(), "Error en la inserccion", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+        else if(switchFavorito.isChecked()) {
+
+            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, true)) {
+                Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else Toast.makeText(getApplicationContext(), "Error en la inserccion", Toast.LENGTH_SHORT).show();
+
+        }
+
+        else {
+
+            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, false)) {
+                Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else Toast.makeText(getApplicationContext(), "Error en la inserccion", Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 

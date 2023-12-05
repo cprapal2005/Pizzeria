@@ -280,7 +280,8 @@
                     android:id="@+id/rowTxtCantidadPizza"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="10dp"
+                    tools:visibility="gone">
 
                     <TextView
                         android:id="@+id/textViewCantidad"
@@ -295,7 +296,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="10dp"
+                    android:visibility="invisible"
+                    tools:visibility="gone">
 
                     <Button
                         android:id="@+id/btnMenosPizza"

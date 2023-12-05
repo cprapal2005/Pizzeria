@@ -21,6 +21,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.pizzeria.pojos.DaoIngredientes;
 import com.example.pizzeria.pojos.Ingrediente;
 import com.example.pizzeria.pojos.MasaPizza;
 import com.example.pizzeria.pojos.Pizza;
@@ -34,7 +35,7 @@ import java.io.InputStream;
 public class ActivityCreaPizza extends AppCompatActivity {
 
     Pizza pizza;
-    Pizza pizzaDefault;
+    Pizza pizzaModificada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +52,9 @@ public class ActivityCreaPizza extends AppCompatActivity {
         if (intent.hasExtra("pizzaElegida")) {
 
             pizza = (Pizza) intent.getSerializableExtra("pizzaElegida");
-            pizzaDefault = new Pizza(pizza.getNombre(), pizza.getDescripcion(), pizza.getTamanoPizza(), pizza.getMasaPizza(), pizza.getQuesoPizza(), pizza.getSalsaPizza(), pizza.getListaIngredientes(), pizza.getImagenResourceId());
+            pizzaModificada = new Pizza(pizza.getNombre(), pizza.getDescripcion(), pizza.getTamanoPizza(), pizza.getMasaPizza(), pizza.getQuesoPizza(), pizza.getSalsaPizza(), DaoIngredientes.getStatic().getIngredientes(pizza.getListaIngredientes()), pizza.getImagenResourceId());
 
-            mostrarInformacionEnUI(pizza);
+            mostrarInformacionEnUI(pizzaModificada);
 
         }
 
@@ -117,7 +118,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         intent.putExtra("pizzaElegida", pizza);
 
-        intent.putExtra("pizzaDefault", pizzaDefault);
+        intent.putExtra("pizzaModificada", pizzaModificada);
 
         startActivity(intent);
 
@@ -174,11 +175,11 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioMediana = bottomSheetView.findViewById(R.id.radio_Mediana);
         RadioButton radioIndividual = bottomSheetView.findViewById(R.id.radio_Individual);
 
-        if(radioGroupTamano.getCheckedRadioButtonId()==radioFamiliar.getId()) pizza.setTamanoPizza(TamanoPizza.Familiar);
+        if(radioGroupTamano.getCheckedRadioButtonId()==radioFamiliar.getId()) pizzaModificada.setTamanoPizza(TamanoPizza.Familiar);
 
-        else if(radioGroupTamano.getCheckedRadioButtonId()==radioMediana.getId()) pizza.setTamanoPizza(TamanoPizza.Mediana);
+        else if(radioGroupTamano.getCheckedRadioButtonId()==radioMediana.getId()) pizzaModificada.setTamanoPizza(TamanoPizza.Mediana);
 
-        else if(radioGroupTamano.getCheckedRadioButtonId()==radioIndividual.getId()) pizza.setTamanoPizza(TamanoPizza.Individual);
+        else if(radioGroupTamano.getCheckedRadioButtonId()==radioIndividual.getId()) pizzaModificada.setTamanoPizza(TamanoPizza.Individual);
 
         actualizarTamano(bottomSheetView);
 
@@ -191,7 +192,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioMediana = bottomSheetView.findViewById(R.id.radio_Mediana);
         RadioButton radioIndividual = bottomSheetView.findViewById(R.id.radio_Individual);
 
-        switch (pizza.getTamanoPizza()) {
+        switch (pizzaModificada.getTamanoPizza()) {
 
             case Familiar:
                 radioGroupTamano.check(radioFamiliar.getId());
@@ -207,7 +208,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         }
 
-        mostrarInformacionEnUI(pizza);
+        mostrarInformacionEnUI(pizzaModificada);
 
     }
 
@@ -304,21 +305,21 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioPan = bottomSheetView.findViewById(R.id.radio_Pan);
         RadioButton radioVeggiThinCrust = bottomSheetView.findViewById(R.id.radio_VeggiThinCrust);
 
-        if(radioGroupMasa.getCheckedRadioButtonId()==radioOriginal.getId()) pizza.setMasaPizza(MasaPizza.Original);
+        if(radioGroupMasa.getCheckedRadioButtonId()==radioOriginal.getId()) pizzaModificada.setMasaPizza(MasaPizza.Original);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioRollRoulette.getId()) pizza.setMasaPizza(MasaPizza.Roll_Roulette);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioRollRoulette.getId()) pizzaModificada.setMasaPizza(MasaPizza.Roll_Roulette);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioMozzarellaRoll.getId()) pizza.setMasaPizza(MasaPizza.Mozzarella_Roll);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioMozzarellaRoll.getId()) pizzaModificada.setMasaPizza(MasaPizza.Mozzarella_Roll);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioCheddapeñoRoll.getId()) pizza.setMasaPizza(MasaPizza.Cheddapeño_Roll);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioCheddapeñoRoll.getId()) pizzaModificada.setMasaPizza(MasaPizza.Cheddapeño_Roll);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioCabraRoll.getId()) pizza.setMasaPizza(MasaPizza.Cabra_Roll);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioCabraRoll.getId()) pizzaModificada.setMasaPizza(MasaPizza.Cabra_Roll);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioFinizzima.getId()) pizza.setMasaPizza(MasaPizza.Finizzima);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioFinizzima.getId()) pizzaModificada.setMasaPizza(MasaPizza.Finizzima);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioPan.getId()) pizza.setMasaPizza(MasaPizza.Pan);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioPan.getId()) pizzaModificada.setMasaPizza(MasaPizza.Pan);
 
-        else if(radioGroupMasa.getCheckedRadioButtonId()==radioVeggiThinCrust.getId()) pizza.setMasaPizza(MasaPizza.Veggi_Thin_Crust);
+        else if(radioGroupMasa.getCheckedRadioButtonId()==radioVeggiThinCrust.getId()) pizzaModificada.setMasaPizza(MasaPizza.Veggi_Thin_Crust);
 
         actualizarMasa(bottomSheetView);
 
@@ -336,7 +337,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioPan = bottomSheetView.findViewById(R.id.radio_Pan);
         RadioButton radioVeggiThinCrust = bottomSheetView.findViewById(R.id.radio_VeggiThinCrust);
 
-        switch (pizza.getMasaPizza()) {
+        switch (pizzaModificada.getMasaPizza()) {
 
             case Original:
                 radioGroupMasa.check(radioOriginal.getId());
@@ -372,7 +373,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         }
 
-        mostrarInformacionEnUI(pizza);
+        mostrarInformacionEnUI(pizzaModificada);
 
     }
 
@@ -478,23 +479,23 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioSalsaBarbacoaTexas = bottomSheetView.findViewById(R.id.radio_SalsaBarbacoaTexas);
         RadioButton radioSalsaCarbonaraMornay = bottomSheetView.findViewById(R.id.radio_SalsaCarbonaraMornay);
 
-        if(radioGroupSalsa.getCheckedRadioButtonId()==radioSinSalsa.getId()) pizza.setSalsaPizza(SalsaPizza.Sin_Salsa);
+        if(radioGroupSalsa.getCheckedRadioButtonId()==radioSinSalsa.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Sin_Salsa);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBBQOriginal.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_BBQ_Original);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBBQOriginal.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_BBQ_Original);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaRancheraBBQ.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_Ranchera_BBQ);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaRancheraBBQ.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_Ranchera_BBQ);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaTomate.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_Tomate);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaTomate.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_Tomate);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioCremaFresca.getId()) pizza.setSalsaPizza(SalsaPizza.Crema_Fresca);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioCremaFresca.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Crema_Fresca);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioCremaFrescaBarbacoa.getId()) pizza.setSalsaPizza(SalsaPizza.Crema_Fresca_Barbacoa);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioCremaFrescaBarbacoa.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Crema_Fresca_Barbacoa);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBourbon.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_Bourbon);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBourbon.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_Bourbon);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBarbacoaTexas.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_Barbacoa_Texas);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaBarbacoaTexas.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_Barbacoa_Texas);
 
-        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaCarbonaraMornay.getId()) pizza.setSalsaPizza(SalsaPizza.Salsa_Carbonara_Mornay);
+        else if(radioGroupSalsa.getCheckedRadioButtonId()==radioSalsaCarbonaraMornay.getId()) pizzaModificada.setSalsaPizza(SalsaPizza.Salsa_Carbonara_Mornay);
 
         actualizarSalsa(bottomSheetView);
 
@@ -513,7 +514,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radioSalsaBarbacoaTexas = bottomSheetView.findViewById(R.id.radio_SalsaBarbacoaTexas);
         RadioButton radioSalsaCarbonaraMornay = bottomSheetView.findViewById(R.id.radio_SalsaCarbonaraMornay);
 
-        switch (pizza.getSalsaPizza()) {
+        switch (pizzaModificada.getSalsaPizza()) {
 
             case Sin_Salsa:
                 radioGroupSalsa.check(radioSinSalsa.getId());
@@ -553,7 +554,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         }
 
-        mostrarInformacionEnUI(pizza);
+        mostrarInformacionEnUI(pizzaModificada);
 
     }
 
@@ -628,19 +629,19 @@ public class ActivityCreaPizza extends AppCompatActivity {
         Button btnMasCantidadQuesoPizza = bottomSheetView.findViewById(R.id.btnMasCantidadQuesoPizza);
 
         if(radioGroupQueso.getCheckedRadioButtonId()==radio_SinQueso.getId()) {
-            pizza.setQuesoPizza(QuesoPizza.Sin_Queso);
+            pizzaModificada.setQuesoPizza(QuesoPizza.Sin_Queso);
             btnMasCantidadQuesoPizza.setEnabled(false);
             btnMenosCantidadQuesoPizza.setEnabled(false);
         }
 
         else if(radioGroupQueso.getCheckedRadioButtonId()==radio_QuesoMozzarella.getId()) {
-            pizza.setQuesoPizza(QuesoPizza.Queso_Mozzarella);
+            pizzaModificada.setQuesoPizza(QuesoPizza.Queso_Mozzarella);
             btnMasCantidadQuesoPizza.setEnabled(true);
             btnMenosCantidadQuesoPizza.setEnabled(true);
         }
 
         else if(radioGroupQueso.getCheckedRadioButtonId()==radio_VeggiCheeseViolife.getId()) {
-            pizza.setQuesoPizza(QuesoPizza.VeggiCheese_Violife);
+            pizzaModificada.setQuesoPizza(QuesoPizza.VeggiCheese_Violife);
             btnMasCantidadQuesoPizza.setEnabled(true);
             btnMenosCantidadQuesoPizza.setEnabled(true);
         }
@@ -653,10 +654,10 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         if(sumar) {
 
-            if(pizza.getQuesoPizza().getCantidadQueso()<2) {
+            if(pizzaModificada.getQuesoPizza().getCantidadQueso()<2) {
 
-                int cantidad = pizza.getQuesoPizza().getCantidadQueso();
-                pizza.getQuesoPizza().setCantidadQueso(cantidad+1);
+                int cantidad = pizzaModificada.getQuesoPizza().getCantidadQueso();
+                pizzaModificada.getQuesoPizza().setCantidadQueso(cantidad+1);
 
             }
 
@@ -664,10 +665,10 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         else {
 
-            if(pizza.getQuesoPizza().getCantidadQueso()>0) {
+            if(pizzaModificada.getQuesoPizza().getCantidadQueso()>0) {
 
-                int cantidad = pizza.getQuesoPizza().getCantidadQueso();
-                pizza.getQuesoPizza().setCantidadQueso(cantidad-1);
+                int cantidad = pizzaModificada.getQuesoPizza().getCantidadQueso();
+                pizzaModificada.getQuesoPizza().setCantidadQueso(cantidad-1);
 
             }
 
@@ -684,7 +685,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         RadioButton radio_QuesoMozzarella = bottomSheetView.findViewById(R.id.radio_QuesoMozzarella);
         RadioButton radio_VeggiCheeseViolife = bottomSheetView.findViewById(R.id.radio_VeggiCheeseViolife);
 
-        switch (pizza.getQuesoPizza()) {
+        switch (pizzaModificada.getQuesoPizza()) {
 
             case Sin_Queso:
                 radioGroupQueso.check(radio_SinQueso.getId());
@@ -702,7 +703,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         TextView textViewCantidadQuesoPizza = bottomSheetView.findViewById(R.id.textViewCantidadQuesoPizza);
 
-        switch (pizza.getQuesoPizza().getCantidadQueso()) {
+        switch (pizzaModificada.getQuesoPizza().getCantidadQueso()) {
 
             case 0:
                 textViewCantidadQuesoPizza.setText("Estandar");
@@ -718,7 +719,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
 
         }
 
-        mostrarInformacionEnUI(pizza);
+        mostrarInformacionEnUI(pizzaModificada);
 
     }
 
@@ -1139,7 +1140,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         Button btnMasYork = bottomSheetView.findViewById(R.id.btnMasYork);
 
         if(botonElegido.getId()==btnMenosAceitunas.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Aceitunas") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1148,7 +1149,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasAceitunas.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Aceitunas") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1157,7 +1158,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosAnchoas.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Anchoas") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1166,7 +1167,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasAnchoas.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Anchoas") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1175,7 +1176,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosAtun.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Atun") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1184,7 +1185,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasAtun.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Atun") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1193,7 +1194,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosBacon.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Bacon") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1202,7 +1203,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasBacon.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Bacon") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1211,7 +1212,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosBaconCrispy.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Bacon Crispy") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1220,7 +1221,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasBaconCrispy.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Bacon Crispy") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1229,7 +1230,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosCebolla.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Cebolla") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1238,7 +1239,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasCebolla.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Cebolla") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1247,7 +1248,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosCebollaCaramelizada.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Cebolla Caramelizada") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1256,7 +1257,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasCebollaCaramelizada.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Cebolla Caramelizada") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1265,7 +1266,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosChampinon.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Champiñon") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1274,7 +1275,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasChampinon.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Champiñon") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1283,7 +1284,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosMaiz.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Maiz") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1292,7 +1293,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasMaiz.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Maiz") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1301,7 +1302,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPeperoni.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Peperoni") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1310,7 +1311,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPeperoni.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Peperoni") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1319,7 +1320,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPimiento.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pimiento") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1328,7 +1329,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPimiento.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pimiento") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1337,7 +1338,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPina.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Piña") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1346,7 +1347,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPina.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Piña") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1355,7 +1356,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPolloBuffalo.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pollo Buffalo") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1364,7 +1365,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPolloBuffalo.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pollo Buffalo") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1373,7 +1374,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPolloParrilla.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pollo Parrilla") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1382,7 +1383,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPolloParrilla.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pollo Parrilla") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1391,7 +1392,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosPulledPork.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pulled Pork") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1400,7 +1401,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasPulledPork.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Pulled Pork") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1409,7 +1410,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosQuesoCheddarRojo.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Queso Cheddar Rojo") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1418,7 +1419,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasQuesoCheddarRojo.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Queso Cheddar Rojo") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1427,7 +1428,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosQuesoParmesano.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Queso Parmesano") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1436,7 +1437,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasQuesoParmesano.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Queso Parmesano") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1445,7 +1446,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosTernera.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Ternera") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1454,7 +1455,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasTernera.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Ternera") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1463,7 +1464,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosTomate.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Tomate") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1472,7 +1473,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasTomate.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Tomate") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1481,7 +1482,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosVegeroni.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Vegeroni") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1490,7 +1491,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasVegeroni.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Vegeroni") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1499,7 +1500,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosVeggichicken.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Veggi Chicken") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1508,7 +1509,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasVeggichicken.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("Veggi Chicken") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1517,7 +1518,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMenosYork.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("York") && ingrediente.getCantidadIngrediente()>0) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad-1);
@@ -1526,7 +1527,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         }
 
         else if(botonElegido.getId()==btnMasYork.getId()) {
-            pizza.getListaIngredientes().forEach(ingrediente -> {
+            pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
                 if(ingrediente.getNombre().equals("York") && ingrediente.getCantidadIngrediente()<2) {
                     int cantidad = ingrediente.getCantidadIngrediente();
                     ingrediente.setCantidadIngrediente(cantidad+1);
@@ -1564,7 +1565,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         TextView textViewCantidadYork = bottomSheetView.findViewById(R.id.textViewCantidadYork);
 
 
-        pizza.getListaIngredientes().forEach(ingrediente -> {
+        pizzaModificada.getListaIngredientes().forEach(ingrediente -> {
 
             switch (ingrediente.getNombre()) {
 
