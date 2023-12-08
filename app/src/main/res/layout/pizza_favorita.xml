@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:id="@+id/rowFavoritoPizza1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewFavoritoNombrePizza"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Pecado Carnal"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewFavoritoDineroPizza"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="25,99€"
+            android:textAlignment="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rowFavoritoPizza2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnInfoPizzaFavorito"
+            tools:text="Ver Informacion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:onClick="informacionPizza"
+            android:text="Ver Informacion"
+            android:textAlignment="viewStart"
+            android:textColor="#00BCD4"
+            android:textColorHighlight="#00BCD4"
+            android:textColorHint="#00BCD4"
+            android:textColorLink="#00BCD4"
+            android:textStyle="italic"
+            app:iconGravity="textEnd"
+            app:iconTint="#000000" />
+
+        <Button
+            android:id="@+id/btnPedirPizzaFavorito"
+            tools:text="Pedir"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:onClick="modificarPizza"
+            android:text="Pedir"
+            android:textAlignment="textEnd"
+            android:textAllCaps="false"
+            android:textColor="#00BCD4"
+            android:textStyle="italic"
+            app:icon="@drawable/baseline_add_shopping_cart_24"
+            app:iconGravity="textEnd"
+            app:iconTint="#000000" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rowFavoritoPizza3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D1D1D1">
+
+        <TextView
+            android:id="@+id/textViewInformacionPizzaFavorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+</TableLayout>

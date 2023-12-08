@@ -58,7 +58,7 @@ public class ActivityPizzas extends AppCompatActivity {
             }
         });
 
-        dbHelper = new BaseDatosHelper(this);
+        dbHelper = Servicio.getStatic().getDbHelper();
 
     }
 

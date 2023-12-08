@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_ios_24);
         usernameRegister = findViewById(R.id.usernameRegister);
         passwordRegister = findViewById(R.id.passwordRegister);
-        dbHelper = new BaseDatosHelper(this);
+        dbHelper = Servicio.getStatic().getDbHelper();
 
 
     }

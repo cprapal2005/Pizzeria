@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Pizza implements Serializable {
-
-    private static int contador = 1;
     private int id;
     private String nombre;
     private String descripcion;
@@ -16,8 +14,8 @@ public class Pizza implements Serializable {
     private ArrayList<Ingrediente> listaIngredientes;
     private String imagenId;
 
-    public Pizza(String nombre, String descripcion, TamanoPizza tamanoPizza, MasaPizza masaPizza, QuesoPizza quesoPizza, SalsaPizza salsaPizza, ArrayList<Ingrediente> listaIngredientes, String imagenId) {
-        this.id = contador++;
+    public Pizza(int id, String nombre, String descripcion, TamanoPizza tamanoPizza, MasaPizza masaPizza, QuesoPizza quesoPizza, SalsaPizza salsaPizza, ArrayList<Ingrediente> listaIngredientes, String imagenId) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tamanoPizza = tamanoPizza;

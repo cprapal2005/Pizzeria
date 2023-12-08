@@ -22,6 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.pizzeria.pojos.DaoIngredientes;
+import com.example.pizzeria.pojos.DaoPizzas;
 import com.example.pizzeria.pojos.Ingrediente;
 import com.example.pizzeria.pojos.MasaPizza;
 import com.example.pizzeria.pojos.Pizza;
@@ -52,7 +53,7 @@ public class ActivityCreaPizza extends AppCompatActivity {
         if (intent.hasExtra("pizzaElegida")) {
 
             pizza = (Pizza) intent.getSerializableExtra("pizzaElegida");
-            pizzaModificada = new Pizza(pizza.getNombre(), pizza.getDescripcion(), pizza.getTamanoPizza(), pizza.getMasaPizza(), pizza.getQuesoPizza(), pizza.getSalsaPizza(), DaoIngredientes.getStatic().getIngredientes(pizza.getListaIngredientes()), pizza.getImagenResourceId());
+            pizzaModificada = new Pizza(DaoPizzas.getStatic().getNuevoId(Servicio.getStatic().getDbHelper()), pizza.getNombre(), pizza.getDescripcion(), pizza.getTamanoPizza(), pizza.getMasaPizza(), pizza.getQuesoPizza(), pizza.getSalsaPizza(), DaoIngredientes.getStatic().getIngredientes(pizza.getListaIngredientes()), pizza.getImagenResourceId());
 
             mostrarInformacionEnUI(pizzaModificada);
 

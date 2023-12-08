@@ -42,7 +42,7 @@ public class ActivityCesta extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back_ios_24);
-        dbHelper = new BaseDatosHelper(this);
+        dbHelper = Servicio.getStatic().getDbHelper();
         Intent intent = getIntent();
 
         if (intent.hasExtra("pizzaElegida")) {
@@ -151,7 +151,7 @@ public class ActivityCesta extends AppCompatActivity {
         if(diferente && switchFavorito.isChecked()) {
 
             pizzaModificada.setNombre(textFavorito.getText().toString());
-            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, true)) {
+            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, true, Servicio.getStatic().getUsuarioLogueado())) {
                 Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -162,7 +162,7 @@ public class ActivityCesta extends AppCompatActivity {
 
         else if(diferente) {
 
-            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, false)) {
+            if(DaoPizzas.getStatic().insertarPizzaModificada(dbHelper, pizzaModificada, false, Servicio.getStatic().getUsuarioLogueado())) {
                 Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -173,7 +173,7 @@ public class ActivityCesta extends AppCompatActivity {
 
         else if(switchFavorito.isChecked()) {
 
-            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, true)) {
+            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, true, Servicio.getStatic().getUsuarioLogueado())) {
                 Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
                 finish();
             }
@@ -183,7 +183,7 @@ public class ActivityCesta extends AppCompatActivity {
 
         else {
 
-            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, false)) {
+            if(DaoPizzas.getStatic().insertarPizzaDefault(dbHelper, pizza, false, Servicio.getStatic().getUsuarioLogueado())) {
                 Toast.makeText(getApplicationContext(), "Su pedido se encuentra en preparación", Toast.LENGTH_SHORT).show();
                 finish();
             }

@@ -15,9 +15,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void cambiarActivity(View v) {
+    public void cambiarActivityPizza(View v) {
 
         startActivity(new Intent(MainActivity.this, ActivityPizzas.class));
+
+    }
+
+    public void cambiarActivityFavoritos(View v) {
+
+        startActivity(new Intent(MainActivity.this, ActivityFavoritos.class));
 
     }
 

@@ -29,7 +29,10 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.btnLogin);
         registerButton = findViewById(R.id.btnRegister);
-        dbHelper = new BaseDatosHelper(this);
+        if(Servicio.getStatic().getDbHelper()==null){
+            dbHelper = new BaseDatosHelper(this);
+            Servicio.getStatic().setDbHelper(dbHelper);
+        }
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean inicioSesion = DaoUsuarios.getStatic().loginUsuario(dbHelper, usernameEditText.getText().toString(), passwordEditText.getText().toString());
                 if(inicioSesion) {
                     updateUiWithUser();
+                    Servicio.getStatic().setUsuarioLogueado(usernameEditText.getText().toString());
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 }
