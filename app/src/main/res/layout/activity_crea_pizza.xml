@@ -277,51 +277,6 @@
                     android:paddingBottom="30dp" />
 
                 <TableRow
-                    android:id="@+id/rowTxtCantidadPizza"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingBottom="10dp"
-                    tools:visibility="gone">
-
-                    <TextView
-                        android:id="@+id/textViewCantidad"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cantidad"
-                        android:textAlignment="center" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/rowCantidadPizza"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:paddingBottom="10dp"
-                    android:visibility="invisible"
-                    tools:visibility="gone">
-
-                    <Button
-                        android:id="@+id/btnMenosPizza"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginRight="10dp"
-                        android:text="-" />
-
-                    <TextView
-                        android:id="@+id/textViewCantidadPizza"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1" />
-
-                    <Button
-                        android:id="@+id/btnMasPizza"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginLeft="10dp"
-                        android:text="+" />
-                </TableRow>
-
-                <TableRow
                     android:id="@+id/rowBtnAñadirPizza"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">

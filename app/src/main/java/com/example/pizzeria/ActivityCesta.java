@@ -86,24 +86,42 @@ public class ActivityCesta extends AppCompatActivity {
 
         TextView textViewInformacionPizza = findViewById(R.id.textViewInformacionPizza);
 
-        String informacionPizzaString = "Tamaño: " + pizzaModificada.getTamanoPizza().getNombre() + " " + pizzaModificada.getTamanoPizza().getSumaPrecio() + "€\n\n" +
-                "Masa: " + pizzaModificada.getMasaPizza().getNombre() + " " + pizzaModificada.getMasaPizza().getSumaPrecio() + "€\n\n" +
-                "Queso: " + pizzaModificada.getQuesoPizza().getNombre() + " | Cantidad " + pizzaModificada.getQuesoPizza().getCantidadQueso() + " | " + pizzaModificada.getQuesoPizza().getSumaPrecio() + "€\n\n" +
-                "Salsa: " + pizzaModificada.getSalsaPizza().getNombre() + "\n\n";
-
-        informacionPizzaString += "Ingredientes: \n";
-
-        for (Ingrediente ingrediente : pizzaModificada.getListaIngredientes()) {
-            if(ingrediente.getCantidadIngrediente()>0) informacionPizzaString += ingrediente.getNombre() + ": " + ingrediente.getCantidadIngrediente() + " - " + ingrediente.getSumaPrecio() + "€\n";
-        }
-
-        textViewInformacionPizza.setText(informacionPizzaString);
-
         TableRow rowInformacionCesta1 = findViewById(R.id.rowInformacionCesta1);
 
-        rowInformacionCesta1.setBackgroundColor(Color.TRANSPARENT);
+        if(textViewInformacionPizza.getText().length()==0) {
 
-        rowInformacionCesta1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+            String informacionPizzaString = "Tamaño: " + pizzaModificada.getTamanoPizza().getNombre() + " " + pizzaModificada.getTamanoPizza().getSumaPrecio() + "€\n\n" +
+                    "Masa: " + pizzaModificada.getMasaPizza().getNombre() + " " + pizzaModificada.getMasaPizza().getSumaPrecio() + "€\n\n" +
+                    "Queso: " + pizzaModificada.getQuesoPizza().getNombre() + " | Cantidad " + pizzaModificada.getQuesoPizza().getCantidadQueso() + " | " + pizzaModificada.getQuesoPizza().getSumaPrecio() + "€\n\n" +
+                    "Salsa: " + pizzaModificada.getSalsaPizza().getNombre() + "\n\n";
+
+            informacionPizzaString += "Ingredientes: \n";
+
+            for (Ingrediente ingrediente : pizzaModificada.getListaIngredientes()) {
+                if(ingrediente.getCantidadIngrediente()>0) informacionPizzaString += ingrediente.getNombre() + ": " + ingrediente.getCantidadIngrediente() + " - " + ingrediente.getSumaPrecio() + "€\n";
+            }
+
+            textViewInformacionPizza.setText(informacionPizzaString);
+
+            rowInformacionCesta1.setBackgroundColor(Color.TRANSPARENT);
+
+            rowInformacionCesta1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+
+        }
+
+        else {
+
+            textViewInformacionPizza.setText("");
+
+            rowInformacionCesta1.setBackgroundColor(Color.parseColor("#D1D1D1"));
+
+            rowInformacionCesta1.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 3));
+
+            rowInformacionCesta1.setPadding(0,0,0,10);
+
+        }
+
+
 
     }
 

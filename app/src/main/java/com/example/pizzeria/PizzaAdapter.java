@@ -43,22 +43,39 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.PizzaViewHol
         holder.textViewFavoritoDineroPizza.setText(pizza.getPrecio() + "€");
         holder.btnInfoPizzaFavorito.setOnClickListener(v -> {
 
-            String informacionPizzaString = "Tamaño: " + pizza.getTamanoPizza().getNombre() + " " + pizza.getTamanoPizza().getSumaPrecio() + "€\n\n" +
-                    "Masa: " + pizza.getMasaPizza().getNombre() + " " + pizza.getMasaPizza().getSumaPrecio() + "€\n\n" +
-                    "Queso: " + pizza.getQuesoPizza().getNombre() + " | Cantidad " + pizza.getQuesoPizza().getCantidadQueso() + " | " + pizza.getQuesoPizza().getSumaPrecio() + "€\n\n" +
-                    "Salsa: " + pizza.getSalsaPizza().getNombre() + "\n\n";
+            if(holder.textViewInformacionPizzaFavorito.getText().length()==0) {
 
-            informacionPizzaString += "Ingredientes: \n";
+                String informacionPizzaString = "Tamaño: " + pizza.getTamanoPizza().getNombre() + " " + pizza.getTamanoPizza().getSumaPrecio() + "€\n\n" +
+                        "Masa: " + pizza.getMasaPizza().getNombre() + " " + pizza.getMasaPizza().getSumaPrecio() + "€\n\n" +
+                        "Queso: " + pizza.getQuesoPizza().getNombre() + " | Cantidad " + pizza.getQuesoPizza().getCantidadQueso() + " | " + pizza.getQuesoPizza().getSumaPrecio() + "€\n\n" +
+                        "Salsa: " + pizza.getSalsaPizza().getNombre() + "\n\n";
 
-            for (Ingrediente ingrediente : pizza.getListaIngredientes()) {
-                if(ingrediente.getCantidadIngrediente()>0) informacionPizzaString += ingrediente.getNombre() + ": " + ingrediente.getCantidadIngrediente() + " - " + ingrediente.getSumaPrecio() + "€\n";
+                informacionPizzaString += "Ingredientes: \n";
+
+                for (Ingrediente ingrediente : pizza.getListaIngredientes()) {
+                    if(ingrediente.getCantidadIngrediente()>0) informacionPizzaString += ingrediente.getNombre() + ": " + ingrediente.getCantidadIngrediente() + " - " + ingrediente.getSumaPrecio() + "€\n";
+                }
+
+                holder.textViewInformacionPizzaFavorito.setText(informacionPizzaString);
+
+                holder.rowFavoritoPizza3.setBackgroundColor(Color.TRANSPARENT);
+
+                holder.rowFavoritoPizza3.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+
             }
 
-            holder.textViewInformacionPizzaFavorito.setText(informacionPizzaString);
+            else {
 
-            holder.rowFavoritoPizza3.setBackgroundColor(Color.TRANSPARENT);
+                holder.textViewInformacionPizzaFavorito.setText("");
 
-            holder.rowFavoritoPizza3.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                holder.rowFavoritoPizza3.setBackgroundColor(Color.parseColor("#D1D1D1"));
+
+                holder.rowFavoritoPizza3.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 3));
+
+                holder.rowFavoritoPizza3.setPadding(0,0,0,10);
+
+            }
+
 
         });
 
